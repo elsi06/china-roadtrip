@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>深圳 → 西安</title>
+<script>
+/* Sprache vor dem ersten Rendern setzen: gespeicherte Wahl, sonst Browsersprache */
+(function(){
+  var l = null;
+  try{ l = localStorage.getItem("lang"); }catch(e){}
+  if(l !== "de" && l !== "zh") l = /^zh/i.test(navigator.language || "") ? "zh" : "de";
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l === "zh" ? "zh-CN" : "de";
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4E6DF;
+  --paper-2:#F1F2ED;
+  --ink:#1B201D;
+  --ink-soft:#5A655E;
+  --ink-faint:#8D968F;
+  --cinnabar:#B33F2B;
+  --jade:#3B6252;
+  --loess:#B98E4E;
+  --rule:#C6C9C0;
+  --serif:"Noto Serif SC",Georgia,serif;
+  --sans:"Noto Sans SC",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:17px;
+  line-height:1.65;
+}
+::selection{background:var(--cinnabar);color:var(--paper-2)}
+a{color:var(--cinnabar);text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--cinnabar);outline-offset:3px}
+
+/* ---------- language ---------- */
+html:not([data-lang="zh"]) [data-l="zh"],
+html[data-lang="zh"] [data-l="de"]{display:none!important}
+/* auf Chinesisch steht der Name schon in der Überschrift */
+html[data-lang="zh"] h3 > .hanzi,
+html[data-lang="zh"] .hbody > .hanzi{display:none}
+.lang{
+  position:fixed;top:12px;right:12px;z-index:1100;
+  display:flex;border:1px solid var(--ink);background:var(--paper-2);
+}
+.lang button{
+  padding:5px 10px;border:0;border-radius:0;background:transparent;color:var(--ink);
+  font-family:var(--sans);font-size:13px;font-weight:500;line-height:1.3;cursor:pointer;
+}
+.lang button + button{border-left:1px solid var(--ink)}
+.lang button:hover{background:var(--rule)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper-2)}
+
+/* ---------- layout ---------- */
+#doc{max-width:1080px;margin:0 auto;padding:0 22px 100px}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 40px;border-bottom:1px solid var(--rule)}
+.hero .route{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(38px,9vw,78px);
+  line-height:1.02;margin:0 0 4px;letter-spacing:-.01em;
+}
+.hero .route .arrow{color:var(--cinnabar)}
+.hero .latin{
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(17px,3.4vw,25px);
+  color:var(--ink-soft);margin:0 0 30px;
+}
+.facts{
+  display:flex;flex-wrap:wrap;gap:0 34px;
+  padding:0;margin:0;list-style:none;
+  font-size:14.5px;color:var(--ink-soft);
+}
+.facts b{display:block;font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink)}
+.profile{margin:34px 0 0;width:100%;height:auto;display:block}
+
+/* ---------- generic sections ---------- */
+section{padding:52px 0;border-bottom:1px solid var(--rule)}
+h2{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(24px,4.4vw,32px);
+  line-height:1.25;margin:0 0 8px;
+}
+.lede{color:var(--ink-soft);margin:0 0 30px;max-width:62ch}
+h3{font-family:var(--serif);font-weight:600;font-size:19px;margin:30px 0 6px}
+p{max-width:68ch}
+
+/* ---------- day spine ---------- */
+.day{
+  display:grid;
+  grid-template-columns:62px 1fr;
+  gap:0 26px;
+  padding:44px 0;
+  border-bottom:1px solid var(--rule);
+}
+.day:last-of-type{border-bottom:0}
+.spine{position:relative}
+.seal{
+  width:50px;height:50px;background:var(--cinnabar);color:var(--paper-2);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-weight:900;font-size:22px;
+  line-height:1;
+}
+.seal.rest{background:var(--jade)}
+.spine::after{
+  content:"";position:absolute;left:24px;top:60px;bottom:-44px;
+  width:1px;background:var(--rule);
+}
+.day:last-of-type .spine::after{display:none}
+.stage{font-size:12.5px;color:var(--ink-faint);margin:10px 0 0;writing-mode:horizontal-tb}
+
+.day h3{margin:0 0 2px;font-size:clamp(20px,3.6vw,26px);font-weight:600}
+.hanzi{
+  font-family:var(--serif);color:var(--jade);font-weight:400;
+  font-size:.82em;margin-left:.45em;cursor:pointer;border-bottom:1px dotted var(--jade);
+}
+.hanzi:hover{color:var(--cinnabar);border-color:var(--cinnabar)}
+.meta{
+  display:flex;flex-wrap:wrap;gap:6px 18px;
+  margin:6px 0 16px;font-size:14px;color:var(--ink-soft);
+}
+.meta > span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--loess);margin-right:7px;vertical-align:2px}
+.day p{margin:0 0 14px}
+.note{
+  border-left:3px solid var(--jade);
+  padding:2px 0 2px 15px;margin:18px 0 0;
+  font-size:15px;color:var(--ink-soft);max-width:64ch;
+}
+.note strong{color:var(--ink);font-weight:500}
+.note.warn{border-color:var(--cinnabar)}
+
+/* ---------- amap links ---------- */
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 18px}
+.nav a{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 13px;border:1px solid var(--ink);
+  color:var(--ink);text-decoration:none;
+  font-size:14px;font-weight:500;line-height:1.3;
+}
+.nav a::before{content:"";width:8px;height:8px;background:var(--cinnabar);flex:none}
+.nav a:hover{background:var(--ink);color:var(--paper-2)}
+.nav a small{font-weight:400;color:var(--ink-faint);font-size:12.5px}
+.nav a:hover small{color:var(--rule)}
+
+/* ---------- hotels ---------- */
+.stay{margin:24px 0 0;border-top:1px solid var(--ink)}
+.stay summary{
+  list-style:none;cursor:pointer;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;
+  padding:12px 30px 12px 0;position:relative;
+}
+.stay summary::-webkit-details-marker{display:none}
+.stay summary::after{
+  content:"+";position:absolute;right:2px;top:8px;
+  font-size:22px;font-weight:300;color:var(--cinnabar);line-height:1.2;
+}
+.stay[open] summary::after{content:"−"}
+.stay-h{font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.stay-names{font-size:14px;color:var(--ink-soft)}
+.stay[open] .stay-names{display:none}
+.day > div{min-width:0}
+.hotels{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr));gap:22px;padding:6px 0 4px}
+
+.hotel{background:var(--paper-2);border:1px solid var(--rule);display:flex;flex-direction:column;min-width:0}
+.gal{position:relative;aspect-ratio:800/525;background:var(--rule);overflow:hidden}
+.gal .track{
+  display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+}
+.gal .track::-webkit-scrollbar{display:none}
+.gal figure{margin:0;flex:0 0 100%;height:100%;scroll-snap-align:start;position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figcaption{
+  position:absolute;left:0;right:0;bottom:0;margin:0;
+  padding:22px 12px 8px;font-size:12.5px;line-height:1.35;color:#fff;
+  background:linear-gradient(transparent,rgba(20,24,22,.72));
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.gal figcaption:empty{display:none}
+.gal button{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:34px;height:34px;border:0;border-radius:0;
+  background:rgba(241,242,237,.88);color:var(--ink);
+  font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center;
+}
+.gal button:hover{background:var(--cinnabar);color:var(--paper-2)}
+.gal button[disabled]{opacity:0;pointer-events:none}
+.gal .prev{left:8px}
+.gal .next{right:8px}
+.gal .count{
+  position:absolute;top:8px;right:8px;padding:1px 7px;
+  background:rgba(27,32,29,.72);color:#fff;font-size:12px;font-variant-numeric:tabular-nums;
+}
+
+.hbody{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.hhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.hname{margin:0;font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.3}
+.hname a{color:var(--ink);text-decoration:none}
+.hname a:hover{color:var(--cinnabar)}
+.tier{font-size:13px;color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
+.hotel .hanzi{margin:0;align-self:flex-start;font-size:14px}
+.hfacts{margin:0;font-size:14px;line-height:1.45;color:var(--ink-soft)}
+.hfacts b{color:var(--ink);font-weight:500}
+.hinfo{margin:4px 0 0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13.5px}
+.hinfo dt{color:var(--ink-faint)}
+.hinfo dd{margin:0}
+.hbook{margin-top:auto;padding-top:8px;font-size:14px;font-weight:500}
+
+/* ---------- photos ---------- */
+figure{margin:20px 0 0}
+.shot{
+  position:relative;width:100%;aspect-ratio:3/2;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  overflow:hidden;
+}
+.shot.wide{aspect-ratio:2/1}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot .ph{
+  position:absolute;inset:0;display:grid;place-items:center;
+  text-align:center;padding:20px;
+  color:var(--ink-faint);font-size:13.5px;line-height:1.5;
+  background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(140,150,143,.08) 9px,rgba(140,150,143,.08) 18px);
+}
+.shot img[src]:not([src=""]){position:relative;z-index:1}
+figcaption{font-size:13px;color:var(--ink-faint);margin-top:7px}
+
+/* ---------- route map ---------- */
+.map-wrap{margin:0}
+#map{
+  height:clamp(360px,62vh,600px);width:100%;
+  background:var(--paper-2);border:1px solid var(--ink);
+  font-family:var(--sans);
+}
+#map .leaflet-tile-pane{filter:grayscale(1) contrast(.88) brightness(1.06)}
+#map .leaflet-interactive:focus{outline:none}
+#map .leaflet-control-attribution{background:rgba(241,242,237,.85);font-size:11px}
+#map .leaflet-control-zoom a{border-radius:0;color:var(--ink)}
+#map .leaflet-bar{border-radius:0;border:1px solid var(--ink);box-shadow:none}
+.map-pin{background:var(--ink);border:2px solid var(--paper-2);box-sizing:border-box}
+.map-pin.via{background:var(--paper-2);border:2px solid var(--ink)}
+#map .leaflet-tooltip.map-label{
+  background:none;border:0;box-shadow:none;padding:0 0 0 2px;
+  font-family:var(--serif);font-weight:600;font-size:13px;color:var(--ink);
+  text-shadow:0 0 3px var(--paper-2),0 0 3px var(--paper-2),0 0 5px var(--paper-2);
+}
+#map .leaflet-tooltip.map-label::before{display:none}
+#map .leaflet-tooltip.map-leg{
+  border-radius:0;border:1px solid var(--ink);box-shadow:none;
+  font-family:var(--sans);font-size:13px;color:var(--ink);background:var(--paper-2);
+}
+#map .leaflet-popup-content-wrapper,#map .leaflet-popup-tip{border-radius:0;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+#map .leaflet-popup-content{margin:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+#map .leaflet-popup-content b{font-family:var(--serif);font-weight:600;font-size:15px;display:block}
+#map .leaflet-popup-content a{font-weight:500}
+.map-days{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.map-days button{
+  min-width:38px;padding:6px 10px;border:1px solid var(--ink);border-radius:0;
+  background:transparent;color:var(--ink);cursor:pointer;
+  font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.2;
+}
+.map-days button:hover{background:var(--ink);color:var(--paper-2)}
+.map-days button[aria-pressed="true"]{background:var(--cinnabar);border-color:var(--cinnabar);color:var(--paper-2)}
+.map-days button.alt{font-family:var(--sans);font-weight:500;font-size:13.5px}
+.map-legend{display:flex;flex-wrap:wrap;gap:4px 20px;margin:12px 0 0;font-size:13.5px;color:var(--ink-soft)}
+.lg::before{content:"";display:inline-block;vertical-align:middle;margin-right:8px}
+.lg.main::before{width:22px;height:3px;background:var(--cinnabar)}
+.lg.alt::before{width:22px;height:0;border-top:3px dashed var(--loess)}
+.lg.night::before{width:9px;height:9px;background:var(--ink);border:2px solid var(--paper-2);outline:1px solid var(--rule)}
+.map-note{margin:6px 0 0;font-size:13px;color:var(--ink-faint)}
+
+/* ---------- weather ---------- */
+.wx{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.wx a{
+  display:flex;flex-direction:column;gap:2px;padding:10px 12px 11px;
+  background:var(--paper-2);border:1px solid var(--rule);
+  color:var(--ink);text-decoration:none;min-width:0;
+}
+.wx a:hover{border-color:var(--ink)}
+.wx a.today{border-color:var(--cinnabar);box-shadow:inset 0 3px 0 var(--cinnabar)}
+.wx-date{font-size:12.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums;display:flex;justify-content:space-between;gap:6px}
+.wx-date b{font-family:var(--serif);font-weight:600;color:var(--cinnabar)}
+.wx-place{font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wx-temp{display:flex;align-items:center;gap:8px;margin:4px 0 2px;font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.wx-temp small{font-size:15px;font-weight:400;color:var(--ink-soft)}
+.wx-temp svg{width:24px;height:24px;flex:none;stroke:var(--ink);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.wx-cond{font-size:12.5px;color:var(--ink-soft);min-height:1.2em}
+.wx-rain{height:3px;background:var(--rule);margin:5px 0 3px;position:relative}
+.wx-rain i{position:absolute;inset:0 auto 0 0;background:var(--jade)}
+.wx-foot{display:flex;justify-content:space-between;gap:6px;font-size:12px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+.wx-src{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint)}
+.wx-src.live{color:var(--jade)}
+
+/* ---------- rental ---------- */
+.rent{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:22px;margin:4px 0 0}
+.rent-card{background:var(--paper-2);border:1px solid var(--rule);padding:14px 16px 4px;min-width:0}
+.rent-card h3{margin:0 0 8px;font-size:20px}
+.rent-card .hinfo{margin:0 0 12px;font-size:14px;line-height:1.45;gap:6px 12px}
+.rent-card .hinfo b{font-weight:500}
+.rent-card .nav{margin:0 0 12px}
+.rent-tag{margin:0;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--cinnabar)}
+.ask{
+  margin:14px 0 8px;padding:14px 16px;max-width:62ch;
+  background:var(--paper-2);border-left:3px solid var(--cinnabar);
+  font-family:var(--serif);font-size:16px;line-height:1.75;
+}
+.ask-de{font-size:14px;color:var(--ink-soft)}
+.nav button.copy{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 13px;
+  border:1px solid var(--ink);border-radius:0;background:transparent;color:var(--ink);
+  font-family:var(--sans);font-size:14px;font-weight:500;line-height:1.3;cursor:pointer;
+}
+.nav button.copy::before{content:"";width:8px;height:8px;background:var(--jade);flex:none}
+.nav button.copy:hover{background:var(--ink);color:var(--paper-2)}
+
+/* ---------- tickets ---------- */
+.tix{border-top:1px solid var(--ink)}
+.tix-row{display:grid;grid-template-columns:96px 1fr;gap:0 20px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.tix-row h3{margin:0 0 2px;font-size:18px}
+.tix-row p{margin:0 0 4px;font-size:15px}
+.tix-row .hanzi{margin-left:.2em}
+.tix-row .nav{margin:8px 0 0}
+.tix-when{font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums;line-height:1.35}
+.tix-when b{display:block;font-family:var(--serif);font-weight:600;font-size:17px;color:var(--cinnabar)}
+.tix-open{color:var(--ink-soft)}
+
+/* ---------- emergency ---------- */
+.sos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:0 0 10px}
+.sos a{
+  display:flex;flex-direction:column;padding:12px 14px;
+  border:1px solid var(--ink);background:var(--paper-2);
+  color:var(--ink);text-decoration:none;font-size:14px;line-height:1.35;
+}
+.sos a b{font-family:var(--serif);font-weight:900;font-size:30px;line-height:1.1;color:var(--cinnabar);font-variant-numeric:tabular-nums}
+.sos a small{font-family:var(--serif);color:var(--ink-soft);font-size:13px}
+.sos a:hover{background:var(--ink);color:var(--paper-2)}
+.sos a:hover b,.sos a:hover small{color:var(--paper-2)}
+.sos-sm{grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr))}
+.sos-sm a{border-color:var(--rule)}
+.sos-sm a b{font-weight:600;font-size:18px;color:var(--ink)}
+.phrases{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+.phrase{
+  padding:8px 13px;border:1px solid var(--rule);border-radius:0;background:var(--paper-2);
+  color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.4;text-align:left;cursor:pointer;
+}
+.phrase:hover{border-color:var(--ink)}
+.phrase[data-de]::after{content:attr(data-de);display:block;font-family:var(--sans);font-size:12.5px;color:var(--ink-faint)}
+#show{
+  width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:24px;border:0;
+  background:var(--paper-2);color:var(--ink);
+}
+#show[open]{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:22px}
+#show::backdrop{background:var(--ink)}
+#show .big{font-family:var(--serif);font-weight:600;font-size:clamp(34px,9vw,84px);line-height:1.3;max-width:16em;margin:0}
+#show .small{font-size:17px;color:var(--ink-soft);margin:0}
+#show button{
+  position:absolute;top:16px;right:16px;padding:8px 14px;border:1px solid var(--ink);border-radius:0;
+  background:transparent;color:var(--ink);font-family:var(--sans);font-size:15px;cursor:pointer;
+}
+
+/* ---------- tables ---------- */
+.tbl{width:100%;border-collapse:collapse;margin:20px 0 0;font-size:15px}
+.tbl th,.tbl td{text-align:left;padding:11px 14px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl th{font-weight:500;color:var(--ink-soft);font-size:13.5px}
+.tbl td:first-child{font-weight:500}
+
+/* ---------- checklist ---------- */
+.check{list-style:none;padding:0;margin:16px 0 0;max-width:62ch}
+.check li{padding:9px 0 9px 30px;border-bottom:1px solid var(--rule);position:relative;font-size:15.5px}
+.check li::before{
+  content:"";position:absolute;left:0;top:14px;
+  width:13px;height:13px;border:1px solid var(--ink-faint);
+}
+.check li.done::before{background:var(--jade);border-color:var(--jade)}
+.check li{cursor:pointer;user-select:none}
+.check li.done{color:var(--ink-faint)}
+.check li:hover::before{border-color:var(--ink)}
+
+footer{padding:44px 0 0;color:var(--ink-faint);font-size:13.5px}
+
+@media(max-width:620px){
+  body{font-size:16px}
+  #doc{padding:0 18px 70px}
+  .hero{padding:44px 0 30px}
+  .day{grid-template-columns:40px 1fr;gap:0 16px;padding:34px 0}
+  .seal{width:34px;height:34px;font-size:16px}
+  .spine::after{left:16px;top:44px;bottom:-34px}
+  .stage{display:none}
+  .facts{gap:0 24px}
+  .profile text{font-size:26px}
+  .tix-row{grid-template-columns:1fr;gap:4px}
+  .tix-when b{display:inline;margin-right:8px}
+}
+@media(prefers-reduced-motion:no-preference){
+  #doc{animation:fade .45s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+}
+@media print{
+  .shot{display:none}
+  .nav{display:none}
+  .gal{display:none}
+  .map-days{display:none}
+  .lang{display:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<div class="lang" role="group" aria-label="Sprache · 语言">
+  <button type="button" data-set="de" lang="de">DE</button><button type="button" data-set="zh" lang="zh-CN">中文</button>
+</div>
+
+<main id="doc">
+__CONTENT__
+</main>
+
+<script>
+/* Sprachumschaltung: Inhalt steht zweisprachig im HTML (data-l), hier nur die Texte aus dem Skript */
+const I18N = {
+  de: {
+    title: "Shenzhen → Xi'an · 11 Tage",
+    copyHint: "Tippen zum Kopieren", copied: "kopiert", copiedBtn: "Kopiert", close: "Schliessen",
+    prev: "Vorheriges Bild", next: "Nächstes Bild",
+    wd: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+    date: (wd, d, m) => wd + " " + d + "." + m + ".",
+    rain: "Regen", forecast: "Vorhersage", normal: "Mittelwert",
+    wx: { clear: "klar", mostly: "überwiegend klar", part: "teils bewölkt", cloud: "bedeckt", fog: "Nebel", drizzle: "Niesel",
+          rain: "Regen", snow: "Schnee", shower: "Schauer", snowshower: "Schneeschauer", storm: "Gewitter" },
+    wxFar: (d, m) => "Mittelwerte 2011–2025, jeweils ±3 Tage um das Datum. Die Live-Vorhersage erscheint ab dem " + d + "." + m + ".",
+    wxLive: (n, total, time) => "Vorhersage für " + n + " von " + total + " Tagen, abgerufen " + time,
+    wxRest: " · übrige Tage: Mittelwerte 2011–2025",
+    wxErr: "Vorhersage gerade nicht erreichbar — angezeigt sind Mittelwerte 2011–2025.",
+    locale: "de-CH",
+    day: n => "Tag " + n, alt: "Ausweichroute", toStage: "zur Etappe ↓", all: "Alle", allTitle: "Ganze Route",
+    osm: "-Mitwirkende"
+  },
+  zh: {
+    title: "深圳 → 西安 · 11 天",
+    copyHint: "点击复制", copied: "已复制", copiedBtn: "已复制", close: "关闭",
+    prev: "上一张", next: "下一张",
+    wd: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+    date: (wd, d, m) => m + "/" + d + " " + wd,
+    rain: "降雨", forecast: "预报", normal: "平均值",
+    wx: { clear: "晴", mostly: "晴间少云", part: "多云", cloud: "阴", fog: "雾", drizzle: "毛毛雨",
+          rain: "雨", snow: "雪", shower: "阵雨", snowshower: "阵雪", storm: "雷暴" },
+    wxFar: (d, m) => "2011–2025 年平均值，取当天前后各 3 天。实时预报从 " + m + " 月 " + d + " 日起显示。",
+    wxLive: (n, total, time) => total + " 天中有 " + n + " 天为预报，更新于 " + time,
+    wxRest: " · 其余日期：2011–2025 年平均值",
+    wxErr: "暂时无法获取预报——显示的是 2011–2025 年平均值。",
+    locale: "zh-CN",
+    day: n => "第 " + n + " 天", alt: "备选路线", toStage: "查看行程 ↓", all: "全部", allTitle: "整条路线",
+    osm: " 贡献者"
+  }
+};
+let LANG = document.documentElement.dataset.lang === "zh" ? "zh" : "de";
+const T = () => I18N[LANG];
+const langHooks = [];
+
+function setLang(l){
+  LANG = l;
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l === "zh" ? "zh-CN" : "de";
+  try{ localStorage.setItem("lang", l); }catch(e){}
+  langStatic();
+  langHooks.forEach(f => f());
+}
+function langStatic(){
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.set === LANG ? "true" : "false"));
+  document.title = T().title;
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.set)));
+
+const doc = document.getElementById("doc");
+/* Hanzi antippen kopiert die Schriftzeichen – praktisch für Amap oder zum Vorzeigen */
+function wireCopy(){
+  const hanzi = doc.querySelectorAll(".hanzi");
+  const titles = () => hanzi.forEach(el => { el.title = T().copyHint; });
+  titles();
+  langHooks.push(titles);
+  hanzi.forEach(el => {
+    el.setAttribute("role","button");
+    el.setAttribute("tabindex","0");
+    const fire = () => {
+      navigator.clipboard.writeText(el.dataset.cn || el.textContent.trim()).then(() => {
+        const old = el.textContent;
+        el.textContent = T().copied;
+        setTimeout(() => { el.textContent = old; }, 900);
+      }).catch(()=>{});
+    };
+    el.addEventListener("click", fire);
+    el.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); fire(); } });
+  });
+  /* Längere Texte (z. B. Anfrage an den Vermieter) per Knopf kopieren */
+  doc.querySelectorAll("button.copy").forEach(b => {
+    b.addEventListener("click", () => {
+      navigator.clipboard.writeText(b.dataset.cn).then(() => {
+        const old = b.innerHTML;
+        b.textContent = T().copiedBtn;
+        setTimeout(() => { b.innerHTML = old; }, 1200);
+      }).catch(()=>{});
+    });
+  });
+  /* Fotoplatzhalter: fehlende Bilder sauber ausblenden */
+  doc.querySelectorAll(".shot img").forEach(img => {
+    img.addEventListener("error", () => { img.style.display = "none"; });
+  });
+}
+
+/* Checklisten abhaken, pro Gerät gemerkt */
+function wireChecklist(){
+  let saved = {};
+  try{ saved = JSON.parse(localStorage.getItem("checks") || "{}"); }catch(e){}
+  doc.querySelectorAll(".check li").forEach(li => {
+    /* Schlüssel immer aus dem deutschen Text, damit Häkchen in beiden Sprachen gelten */
+    const key = (li.querySelector('[data-l="de"]') || li).textContent.trim().slice(0, 60);
+    if(key in saved) li.classList.toggle("done", saved[key]);
+    li.setAttribute("role", "checkbox");
+    li.setAttribute("tabindex", "0");
+    const sync = () => li.setAttribute("aria-checked", li.classList.contains("done"));
+    const flip = () => {
+      saved[key] = li.classList.toggle("done");
+      sync();
+      try{ localStorage.setItem("checks", JSON.stringify(saved)); }catch(e){}
+    };
+    sync();
+    li.addEventListener("click", flip);
+    li.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); flip(); } });
+  });
+}
+
+/* Sätze gross zeigen, zum Hinhalten */
+function wirePhrases(){
+  const list = doc.querySelectorAll(".phrase");
+  if(!list.length) return;
+  const dlg = document.createElement("dialog");
+  dlg.id = "show";
+  dlg.innerHTML = '<button type="button"></button><p class="big" lang="zh"></p><p class="small" lang="de"></p>';
+  document.body.appendChild(dlg);
+  const close = () => dlg.close();
+  dlg.addEventListener("click", close);
+  list.forEach(b => b.addEventListener("click", () => {
+    dlg.querySelector("button").textContent = T().close;
+    dlg.querySelector(".big").textContent = b.textContent;
+    dlg.querySelector(".small").textContent = b.dataset.de || "";
+    dlg.showModal();
+  }));
+}
+
+/* Hotelfotos: wischen oder Pfeile, Zähler oben rechts */
+function wireGalleries(){
+  const labels = () => doc.querySelectorAll(".gal").forEach(gal => {
+    gal.querySelector(".prev").setAttribute("aria-label", T().prev);
+    gal.querySelector(".next").setAttribute("aria-label", T().next);
+  });
+  labels();
+  langHooks.push(labels);
+  doc.querySelectorAll(".gal").forEach(gal => {
+    const track = gal.querySelector(".track");
+    const prev  = gal.querySelector(".prev");
+    const next  = gal.querySelector(".next");
+    const count = gal.querySelector(".count");
+    const slides = () => track.querySelectorAll("figure");
+    const index = () => track.clientWidth ? Math.round(track.scrollLeft / track.clientWidth) : 0;
+    const update = () => {
+      const n = slides().length, i = Math.min(index(), n - 1);
+      count.textContent = (i + 1) + " / " + n;
+      prev.disabled = i <= 0;
+      next.disabled = i >= n - 1;
+    };
+    const go = d => track.scrollTo({ left: (index() + d) * track.clientWidth, behavior: "smooth" });
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    track.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+    const box = gal.closest("details");
+    if(box) box.addEventListener("toggle", update);
+    track.querySelectorAll("img").forEach(img => {
+      img.addEventListener("error", () => { img.closest("figure").remove(); update(); });
+    });
+    update();
+  });
+}
+
+/* Wetter: Mittelwerte eingebettet, Live-Vorhersage von Open-Meteo sobald im 16-Tage-Fenster */
+const WX_ICON = {
+  sun:   '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  part:  '<path d="M8 3.5v1.5M3.5 8H2M4.6 4.6l1 1M12.4 4.6l-1 1"/><path d="M5.3 10.4A3.5 3.5 0 1 1 11.8 7"/><path d="M8 20h9a4 4 0 0 0 .6-8 5 5 0 0 0-9.6 1.2A3.4 3.4 0 0 0 8 20z"/>',
+  cloud: '<path d="M7 19h10a4.5 4.5 0 0 0 .7-8.9A6 6 0 0 0 6.2 11.6 3.7 3.7 0 0 0 7 19z"/>',
+  fog:   '<path d="M3 9h18M5 13h14M3 17h18M7 21h10"/>',
+  rain:  '<path d="M7 15h10a4.5 4.5 0 0 0 .7-8.9A6 6 0 0 0 6.2 7.6 3.7 3.7 0 0 0 7 15z"/><path d="M8 18l-1 3M12 18l-1 3M16 18l-1 3"/>',
+  snow:  '<path d="M7 15h10a4.5 4.5 0 0 0 .7-8.9A6 6 0 0 0 6.2 7.6 3.7 3.7 0 0 0 7 15z"/><path d="M8 19h.01M12 21h.01M16 19h.01"/>',
+  storm: '<path d="M7 15h10a4.5 4.5 0 0 0 .7-8.9A6 6 0 0 0 6.2 7.6 3.7 3.7 0 0 0 7 15z"/><path d="M12.5 15l-2 3.5h3l-2 3.5"/>'
+};
+function wmo(c){
+  if(c <= 1)  return ["sun",   c ? "mostly" : "clear"];
+  if(c === 2) return ["part",  "part"];
+  if(c === 3) return ["cloud", "cloud"];
+  if(c < 50)  return ["fog",   "fog"];
+  if(c < 60)  return ["rain",  "drizzle"];
+  if(c < 70)  return ["rain",  "rain"];
+  if(c < 80)  return ["snow",  "snow"];
+  if(c < 85)  return ["rain",  "shower"];
+  if(c < 90)  return ["snow",  "snowshower"];
+  return ["storm", "storm"];
+}
+
+async function wireWeather(){
+  const box = doc.querySelector("#wx");
+  const src = doc.querySelector("#wx-data");
+  const status = doc.querySelector("#wx-status");
+  if(!box || !src) return;
+
+  const data = JSON.parse(src.textContent);
+  const start = new Date(data.start + "T00:00:00Z");
+  const iso = d => d.toISOString().slice(0, 10);
+  const dayEls = doc.querySelectorAll(".day");
+  dayEls.forEach((el, i) => { el.id = "tag-" + (i + 1); });
+  const today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10); /* Chinazeit */
+
+  const days = data.days.map(d => {
+    const date = new Date(start.getTime() + (d.day - 1) * 864e5);
+    return { ...d, iso: iso(date), date };
+  });
+  const label = d => T().date(T().wd[d.date.getUTCDay()], d.date.getUTCDate(), d.date.getUTCMonth() + 1);
+
+  const render = () => {
+    box.innerHTML = "";
+    days.forEach(d => {
+      const live = d.live;
+      const hi = Math.round(live ? live.max : d.max), lo = Math.round(live ? live.min : d.min);
+      const rain = live ? live.rain : d.wet;
+      const [icon, key] = live ? wmo(live.code) : [null, ""];
+      const cond = live ? T().wx[key] : "";
+      const place = LANG === "zh" && d.place_zh || d.place;
+      const a = document.createElement("a");
+      a.href = "#tag-" + d.day;
+      if(d.iso === today) a.className = "today";
+      a.innerHTML =
+        '<span class="wx-date"><span>' + label(d) + '</span><b>' + CN_DAYS[d.day] + '</b></span>' +
+        '<span class="wx-place">' + place + '</span>' +
+        '<span class="wx-temp">' + (icon ? '<svg viewBox="0 0 24 24" aria-hidden="true">' + WX_ICON[icon] + '</svg>' : '') +
+          hi + '°<small>' + lo + '°</small></span>' +
+        '<span class="wx-cond">' + cond + '</span>' +
+        '<span class="wx-rain" title="' + T().rain + ' ' + rain + ' %"><i style="width:' + rain + '%"></i></span>' +
+        '<span class="wx-foot"><span>' + T().rain + ' ' + rain + ' %</span><span>↓ ' + (live ? live.sunset : d.sunset) + '</span></span>' +
+        '<span class="wx-src' + (live ? ' live' : '') + '">' + (live ? T().forecast : T().normal) + '</span>';
+      box.appendChild(a);
+
+      /* Datum und Wetter auch in der Kopfzeile der Etappe */
+      const meta = dayEls[d.day - 1] && dayEls[d.day - 1].querySelector(".meta");
+      if(meta){
+        let chip = meta.querySelector(".wx-chip");
+        if(!chip){ chip = document.createElement("span"); chip.className = "wx-chip"; meta.prepend(chip); }
+        chip.textContent = label(d) + " · " + hi + "° / " + lo + "°" + (live ? " · " + cond : "");
+      }
+    });
+  };
+
+  /* Statuszeile als Zustand merken, damit sie beim Sprachwechsel neu geschrieben werden kann */
+  let state = null;
+  const renderStatus = () => {
+    if(!state) return;
+    if(state.kind === "far"){ status.textContent = T().wxFar(state.from.getUTCDate(), state.from.getUTCMonth() + 1); return; }
+    if(state.kind === "err"){ status.textContent = T().wxErr; return; }
+    status.innerHTML = T().wxLive(state.n, days.length,
+        state.at.toLocaleTimeString(T().locale, { hour: "2-digit", minute: "2-digit" })) +
+      ' · <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>' +
+      (state.n < days.length ? T().wxRest : "");
+  };
+  render();
+  langHooks.push(() => { render(); renderStatus(); });
+
+  /* Die Vorhersage reicht 16 Tage; vorher lohnt sich der Abruf nicht */
+  const horizon = iso(new Date(Date.now() + 15 * 864e5));
+  if(days[0].iso > horizon){
+    state = { kind: "far", from: new Date(start.getTime() - 15 * 864e5) };
+    renderStatus();
+    return;
+  }
+  if(days[days.length - 1].iso < today) return;
+
+  const spots = [...new Map(days.map(d => [d.ll.join(), d.ll])).values()];
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=" + spots.map(s => s[0]).join(",") +
+    "&longitude=" + spots.map(s => s[1]).join(",") +
+    "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunset" +
+    "&timezone=Asia%2FShanghai&forecast_days=16";
+  try{
+    const res = await fetch(url);
+    if(!res.ok) throw new Error(res.status);
+    let json = await res.json();
+    if(!Array.isArray(json)) json = [json];
+    let n = 0;
+    days.forEach(d => {
+      const f = json[spots.findIndex(s => s.join() === d.ll.join())].daily;
+      const i = f.time.indexOf(d.iso);
+      if(i < 0 || f.temperature_2m_max[i] == null) return;
+      d.live = {
+        code: f.weather_code[i], max: f.temperature_2m_max[i], min: f.temperature_2m_min[i],
+        rain: f.precipitation_probability_max[i] ?? 0, sunset: f.sunset[i].slice(11, 16)
+      };
+      n++;
+    });
+    render();
+    state = { kind: "live", n, at: new Date() };
+  }catch(e){
+    state = { kind: "err" };
+  }
+  renderStatus();
+}
+
+/* Routenkarte: Leaflet + OpenStreetMap, erst nach dem Entsperren nachladen */
+function loadLeaflet(){
+  if(window.L) return Promise.resolve(window.L);
+  const base = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
+  const css = document.createElement("link");
+  css.rel = "stylesheet"; css.href = base + "leaflet.min.css"; css.crossOrigin = "anonymous";
+  css.integrity = "sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb";
+  document.head.appendChild(css);
+  return new Promise((resolve, reject) => {
+    const js = document.createElement("script");
+    js.src = base + "leaflet.min.js"; js.crossOrigin = "anonymous";
+    js.integrity = "sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO";
+    js.onload = () => resolve(window.L);
+    js.onerror = reject;
+    document.head.appendChild(js);
+  });
+}
+
+const CN_DAYS = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"];
+
+async function wireMap(){
+  const box  = doc.querySelector("#map");
+  const src  = doc.querySelector("#route-data");
+  const days = doc.querySelector("#map-days");
+  if(!box || !src) return;
+
+  /* Anker für die Etappen, damit Popups dorthin springen können */
+  doc.querySelectorAll(".day").forEach((el, i) => { el.id = "tag-" + (i + 1); });
+
+  let L;
+  try{ L = await loadLeaflet(); }
+  catch(e){ box.closest(".map-wrap").hidden = true; return; }
+
+  const data = JSON.parse(src.textContent);
+  const css  = getComputedStyle(document.documentElement);
+  const red  = css.getPropertyValue("--cinnabar").trim();
+  const gold = css.getPropertyValue("--loess").trim();
+  const ink  = css.getPropertyValue("--ink").trim();
+
+  const map = L.map(box, { scrollWheelZoom: false, zoomSnap: 0.25 });
+  const pad = { padding: [28, 28] };
+  const all = L.latLngBounds(data.legs.filter(l => l.kind === "main").flatMap(l => l.line));
+  map.fitBounds(all, pad);
+  const attribution = () => '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>' + T().osm +
+    ' · Route: <a href="https://project-osrm.org" target="_blank" rel="noopener">OSRM</a>';
+  let credit = attribution();
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: credit }).addTo(map);
+  /* Mausrad erst nach Klick in die Karte, sonst hängt das Scrollen der Seite */
+  map.on("click", () => map.scrollWheelZoom.enable());
+  box.addEventListener("mouseleave", () => map.scrollWheelZoom.disable());
+
+  const base = (alt) => alt
+    ? { color: gold, weight: 3.5, opacity: .95, dashArray: "7 7" }
+    : { color: red,  weight: 4,   opacity: .95 };
+  const title = leg => LANG === "zh" && leg.title_zh || leg.title;
+  const name  = s => LANG === "zh" && s.name_zh || s.name;
+
+  /* Ausweichrouten zuerst, damit die Fahrtage obenauf liegen */
+  const order = [...data.legs].sort((a, b) => (b.kind === "alt") - (a.kind === "alt"));
+  const hover = matchMedia("(hover: hover)").matches;
+  const legs = order.map(leg => {
+    const alt = leg.kind === "alt";
+    const line = L.polyline(leg.line, base(alt)).addTo(map);
+    /* breite unsichtbare Linie darüber, damit man auf dem Handy trifft */
+    const hit = L.polyline(leg.line, { weight: 22, opacity: 0 }).addTo(map);
+    if(hover) hit.bindTooltip("", { sticky: true, className: "map-leg", direction: "top", offset: [0, -8] });
+    hit.bindPopup("");
+    hit.on("mouseover", () => line.setStyle({ weight: 7 }));
+    hit.on("mouseout",  () => line.setStyle({ weight: base(alt).weight }));
+    return { leg, line, hit };
+  });
+
+  const markers = data.stops.map(s => {
+    const size = s.night ? 13 : 10;
+    const m = L.marker(s.ll, {
+      icon: L.divIcon({ className: "map-pin" + (s.night ? "" : " via"), iconSize: [size, size] }),
+      keyboard: false
+    }).addTo(map);
+    m.bindTooltip("", s.night
+      ? { permanent: true, direction: "right", offset: [6, 0], className: "map-label" }
+      : { direction: "right", offset: [6, 0], className: "map-leg" });
+    return { s, m };
+  });
+
+  /* Tagesknöpfe */
+  const buttons = [];
+  const press = btn => buttons.forEach(b => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+  const add = (text, bounds, cls) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = text;
+    if(cls) b.className = cls;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", () => { map.flyToBounds(bounds, { ...pad, duration: .6 }); press(b); });
+    days.appendChild(b); buttons.push(b);
+    return b;
+  };
+  const allBtn = add("", all, "alt");
+  press(allBtn);
+  const byDay = new Map();
+  legs.filter(x => x.leg.day).forEach(x => {
+    if(!byDay.has(x.leg.day)) byDay.set(x.leg.day, L.latLngBounds([]));
+    byDay.get(x.leg.day).extend(x.line.getBounds());
+  });
+  const dayBtns = [...byDay].sort((a, b) => a[0] - b[0]).map(([day, bounds]) => [day, add(CN_DAYS[day], bounds)]);
+  const enshi = legs.find(x => !x.leg.day);
+  const enshiBtn = enshi && add("", enshi.line.getBounds(), "alt");
+
+  /* Alle Beschriftungen der aktuellen Sprache, auch beim Umschalten */
+  const relabel = () => {
+    legs.forEach(({ leg, hit }) => {
+      const label = (leg.day ? T().day(leg.day) + " · " : "") + title(leg).replace(/^(Alternative Tag 7–8: |第 7–8 天备选：)/, "");
+      const target = leg.day ? "#tag-" + leg.day : "#alternative";
+      const link = doc.querySelector(target) ? '<br><a href="' + target + '">' + T().toStage + '</a>' : "";
+      if(hover) hit.setTooltipContent(label + (leg.dist ? " · " + leg.dist : ""));
+      hit.setPopupContent("<b>" + title(leg) + "</b>" + (leg.day ? T().day(leg.day) : T().alt) + (leg.dist ? " · " + leg.dist : "") + link);
+    });
+    markers.forEach(({ s, m }) => {
+      m.setTooltipContent(name(s));
+      if(m.getElement()) m.getElement().title = name(s);
+    });
+    allBtn.textContent = T().all; allBtn.title = T().allTitle;
+    dayBtns.forEach(([day, b]) => { b.title = T().day(day); });
+    if(enshiBtn){
+      enshiBtn.textContent = name(data.stops.find(s => s.name === "Enshi") || { name: "Enshi" });
+      enshiBtn.title = title(enshi.leg);
+    }
+    const next = attribution();
+    map.attributionControl.removeAttribution(credit).addAttribution(next);
+    credit = next;
+  };
+  relabel();
+  langHooks.push(relabel);
+}
+
+langStatic();
+wireCopy();
+wireChecklist();
+wirePhrases();
+wireGalleries();
+wireWeather();
+wireMap();
+
+</script>
+</body>
+</html>

@@ -1,4 +1,2 @@
-content.html
-template.html
-build.py
-README.md
+__pycache__/
+.DS_Store
